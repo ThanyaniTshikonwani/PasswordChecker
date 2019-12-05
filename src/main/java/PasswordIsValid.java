@@ -1,8 +1,9 @@
-    import java.util.Scanner;
-    import java.util.regex.Matcher;
-    import java.util.regex.Pattern;
 
-    public class PasswordIsValid {
+import java.util.Scanner;
+
+public class PasswordIsValid {
+
+
         public static void main (String[] args) {
             String rerun;
            do {
@@ -16,8 +17,10 @@
                Scanner input = new Scanner(System.in);
                String password = input.nextLine();
                passwordCheck(password);
+               passWordIsOK(password);
                System.out.println("Type 'Yes' to Run Again or 'No' to Exit  ");
                rerun=input.nextLine();
+
            }while (rerun.equalsIgnoreCase("Yes"));
         }
 
@@ -35,8 +38,25 @@
             if (password.length() > 8 && password.matches(numbers) && password.matches(specialCharacter)
                     && password.matches(lowerCaseChars) && password.matches(upperCaseChars) ) {
                 System.out.println("Password is Valid!!");
-            } else{
-                System.out.println("Invalid PassWord!");
+            } else if (password.length() > 8 || password.matches(numbers) || password.matches(specialCharacter)
+                    || password.matches(lowerCaseChars) || password.matches(upperCaseChars)){
+                System.out.println("Invalid Password");
+
                     }
+
         }
+         public static  void passWordIsOK(String password){
+
+             String lowerCaseChars = "(.*[a-z].*)";
+             String numbers = "(.*[0-9].*)";
+             String specialCharacter = "(.*[a-zA-Z0-9].*)";
+             String upperCaseChars = "(.*[A-Z].*)";
+             if (password.length() > 8 && password.matches(lowerCaseChars) && password.matches(specialCharacter)
+                     || password.matches(numbers)) {
+                 System.out.println("Password is Ok!!");
+             } else{
+                 System.out.println("");
+
+             }
+         }
     }
