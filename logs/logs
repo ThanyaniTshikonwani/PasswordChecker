@@ -1,0 +1,5 @@
+2020-01-14 15:06:30,118 ERROR PasswordChecker [main] Password should be longer than than 8 characters
+2020-01-14 15:06:30,127 ERROR PasswordChecker [main] Password should have at least one uppercase letter
+2020-01-14 15:06:30,127 ERROR PasswordChecker [main] Password should at least have one digit
+2020-01-14 15:06:30,127 ERROR PasswordChecker [main] Password should have at least one special character
+2020-01-14 15:06:30,127 ERROR PasswordChecker [main] Invalid Password

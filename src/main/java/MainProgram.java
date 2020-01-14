@@ -1,8 +1,13 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 public class MainProgram {
 
+    private static Logger logger = LogManager.getLogger();
     public static void main (String[] args) {
+
         String rerun;
         do {
             System.out.println("PASSWORD VALIDATOR");
@@ -16,8 +21,10 @@ public class MainProgram {
             String password = input.nextLine();
             PasswordChecker.passwordIsOk(password);
             PasswordChecker.passwordIsValid(password);
+
             System.out.println("Type 'Yes' to Run Again or 'No' to Exit  ");
             rerun=input.nextLine();
+            logger.trace("logs");
         }while (rerun.equalsIgnoreCase("Yes"));
     }
 }
